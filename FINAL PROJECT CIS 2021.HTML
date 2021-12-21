@@ -1,0 +1,87 @@
+<DOCTYPE HTML>
+ <html>
+  <head>
+<div style="background-image: url('wptunnel-sage-green-wallpaper.jpg');">
+   </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+body {
+    text-align: center;
+    padding: 100px 200px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+div {
+  width: 200px;
+  border: 20px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+.button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="mystyle.css">
+</head>
+<p> countdown </p>
+<body>
+<center>
+    <div id="days"></div>
+    <div id="hours"></div>
+    <div id="mins"></div>
+    <div id="secs"></div>
+    <h2 id="end"></h2>
+    </center>
+    <script>
+    var countDownDate = new Date("jan 1, 2022 16:37:52").getTime();
+
+var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;   
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    document.getElementById("days").innerHTML = days + "days "
+    document.getElementById("hours").innerHTML = hours + "hours " 
+    document.getElementById("mins").innerHTML = minutes + "minutes " 
+    document.getElementById("secs").innerHTML = seconds + "seconds " 
+
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("days").innerHTML = ""
+        document.getElementById("hours").innerHTML = "" 
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        document.getElementById("end").innerHTML = "TIME UP!!";
+    }
+    }, 1000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+ 
+
